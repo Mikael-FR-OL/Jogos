@@ -10,13 +10,11 @@ def jogo():
     enforcou = False
     acertou = False
 
-    print(len(palavra_secreta))
     print(lista)
-    while (not enforcou and not acertou):
-
+    while not enforcou and not acertou:
         chute = entrada_do_chute()
 
-        if (chute in palavra_secreta):
+        if chute in palavra_secreta:
             indx = 0
 
             for letra in palavra_secreta:
@@ -28,7 +26,7 @@ def jogo():
             desenha_forca(erros)
 
         enforcou = erros == 6
-        acertou = "_" not in lista
+        acertou = '_' not in lista
         print(lista)
 
     ganhador_or_perdedor(acertou, palavra_secreta)
@@ -41,13 +39,12 @@ def imprimir():
 
 
 def puxa_os_arquivo():
-    # Na linha 45, tem que colocar um arquivo txt, Exemplo: arquivo = open("Teste.txt", "r")
-    arquivo = open("", "r")
+     # Na linha 45, tem que colocar um arquivo txt, Exemplo: arquivo = open("Teste.txt", "r")
+    arquivo = open(" ", "r")
     palavra = []
 
     for linha in arquivo:
-        linha.strip()
-        palavra.append(linha)
+        palavra.append(linha.strip())
     arquivo.close()
     numero = random.randrange(0, len(palavra))
     palavra_secreta = palavra[numero].upper()
@@ -55,94 +52,93 @@ def puxa_os_arquivo():
 
 
 def inicializa_palavras_acertada(palavra_secreta):
-    return ["_" for list in palavra_secreta]
+    return ['_' for letra in palavra_secreta]
 
 
 def entrada_do_chute():
-    chute = input("Forneça uma palavra: ")
-    chute = chute.strip().upper()
+    chute = input("Forneça uma palavra:").strip().upper()
     return chute
 
 
 def ganhador_or_perdedor(acertou, palavra_secreta):
-    if (acertou):
+    if acertou:
         print("Parabéns, você ganhou!")
-        print("       ___________      ")
-        print("      '._==_==_=_.'     ")
-        print("      .-\\:      /-.    ")
-        print("     | (|:.     |) |    ")
-        print("      '-|:.     |-'     ")
-        print("        \\::.    /      ")
-        print("         '::. .'        ")
-        print("           ) (          ")
-        print("         _.' '._        ")
-        print("        '-------'       ")
+        print(r"       ___________      ")
+        print(r"      '._==_==_=_.'     ")
+        print(r"      .-\\:      /-.    ")
+        print(r"     | (|:.     |) |    ")
+        print(r"      '-|:.     |-'     ")
+        print(r"        \\::.    /      ")
+        print(r"         '::. .'        ")
+        print(r"           ) (          ")
+        print(r"         _.' '._        ")
+        print(r"        '-------'       ")
     else:
         print("Puxa, você foi enforcado!")
-        print("A palavra era {}".format(palavra_secreta))
-        print("    _______________         ")
-        print("   /               \       ")
-        print("  /                 \      ")
-        print("//                   \/\  ")
-        print("\|   XXXX     XXXX   | /   ")
-        print(" |   XXXX     XXXX   |/     ")
-        print(" |   XXX       XXX   |      ")
-        print(" |                   |      ")
-        print(" \__      XXX      __/     ")
-        print("   |\     XXX     /|       ")
-        print("   | |           | |        ")
-        print("   | I I I I I I I |        ")
-        print("   |  I I I I I I  |        ")
-        print("   \_             _/       ")
-        print("     \_         _/         ")
-        print("       \_______/           ")
+        print(f'A palavra era {palavra_secreta}')
+        print(r"    _______________         ")
+        print(r"   /               \       ")
+        print(r"  /                 \      ")
+        print(r"//                   \/\  ")
+        print(r"\|   XXXX     XXXX   | /   ")
+        print(r" |   XXXX     XXXX   |/     ")
+        print(r" |   XXX       XXX   |      ")
+        print(r" |                   |      ")
+        print(r" \__      XXX      __/     ")
+        print(r"   |\     XXX     /|       ")
+        print(r"   | |           | |        ")
+        print(r"   | I I I I I I I |        ")
+        print(r"   |  I I I I I I  |        ")
+        print(r"   \_             _/       ")
+        print(r"     \_         _/         ")
+        print(r"       \_______/           ")
 
 
 def desenha_forca(erros):
     print("  _______     ")
     print(" |/      |    ")
 
-    if (erros == 1):
-        print(" |      (_)   ")
-        print(" |            ")
-        print(" |            ")
-        print(" |            ")
+    if erros == 1:
+        print(r" |      (_)   ")
+        print(r" |            ")
+        print(r" |            ")
+        print(r" |            ")
 
-    if (erros == 2):
-        print(" |      (_)   ")
-        print(" |      \     ")
-        print(" |            ")
-        print(" |            ")
+    if erros == 2:
+        print(r" |      (_)   ")
+        print(r" |      \     ")
+        print(r" |            ")
+        print(r" |            ")
 
-    if (erros == 3):
-        print(" |      (_)   ")
-        print(" |      \|    ")
-        print(" |            ")
-        print(" |            ")
+    if erros == 3:
+        print(r" |      (_)   ")
+        print(r" |      \|    ")
+        print(r" |            ")
+        print(r" |            ")
 
-    if (erros == 4):
-        print(" |      (_)   ")
-        print(" |      \|/   ")
-        print(" |            ")
-        print(" |            ")
+    if erros == 4:
+        print(r" |      (_)   ")
+        print(r" |      \|/   ")
+        print(r" |            ")
+        print(r" |            ")
 
-    if (erros == 5):
-        print(" |      (_)   ")
-        print(" |      \|/   ")
-        print(" |       |    ")
-        print(" |            ")
+    if erros == 5:
+        print(r" |      (_)   ")
+        print(r" |      \|/   ")
+        print(r" |       |    ")
+        print(r" |            ")
 
-    if (erros == 6):
-        print(" |      (_)   ")
-        print(" |      \|/   ")
-        print(" |       |    ")
-        print(" |      /     ")
+    if erros == 6:
+        print(r" |      (_)   ")
+        print(r" |      \|/   ")
+        print(r" |       |    ")
+        print(r" |      /     ")
 
-    if (erros == 7):
-        print(" |      (_)   ")
-        print(" |      \|/   ")
-        print(" |       |    ")
-        print(" |      / \   ")
+    if erros == 7:
+        print(r" |      (_)   ")
+        print(r" |      \|/   ")
+        print(r" |       |    ")
+        print(r" |      / \   ")
 
     print(" |            ")
     print("_|___         ")
