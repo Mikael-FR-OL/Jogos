@@ -41,7 +41,8 @@ def imprimir():
 
 
 def puxa_os_arquivo():
-    arquivo = open("teste.txt", "r")
+    # Na linha 45, tem que colocar um arquivo txt, Exemplo: arquivo = open("Teste.txt", "r")
+    arquivo = open("", "r")
     palavra = []
 
     for linha in arquivo:
