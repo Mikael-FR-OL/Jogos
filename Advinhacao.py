@@ -4,7 +4,6 @@ print("         Bem vindo ao jogo de advinhação                 ")
 print("*********************************************************")
 def jogo():
     numero_secreto = random.randint(1, 100)
-
     total_tentivas = 4
     for rodada in range(1, total_tentivas + 1):
         chute_str = input ("Informe o numero de advinhação de 0 a 100: ")
